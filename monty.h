@@ -37,4 +37,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+#define DELIMS "\n\r\t"
+
 #endif /*_MONTY_H_*/
