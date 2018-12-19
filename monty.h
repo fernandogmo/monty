@@ -7,6 +7,8 @@
 #include <string.h>
 #include <stddef.h>
 
+#define DELIMS " \n\r\t"
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,6 +39,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#define DELIMS "\n\r\t"
+/* opcode handlers */
+void push(stack_t **, unsigned int);
+void pall(stack_t **, unsigned int);
+void pint(stack_t **, unsigned int);
+void pop(stack_t **, unsigned int);
+void swap(stack_t **, unsigned int);
+void add(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
 
 #endif /*_MONTY_H_*/
