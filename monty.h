@@ -43,7 +43,9 @@ typedef struct instruction_s
  */
 typedef struct global_state
 {
-	int line_number;
+	int     top;      /* data in top node */
+	size_t  capacity; /* current number of nodes */
+	stack_t *stack;    /* global stack for opcode read-writes */
 } state_t;
 
 extern state_t global;
