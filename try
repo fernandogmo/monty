@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic monty.c pall.c -o monty
+gcc -Wall -Werror -Wextra -pedantic monty.c exec_line_ops.c pall.c -o monty
 ./monty ./bytecodes/00.m
 rm monty
