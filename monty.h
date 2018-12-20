@@ -39,6 +39,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ */
+typedef struct global_state
+{
+	int line_number;
+} state_t;
+
+extern state_t global;
+
 /* opcode handlers */
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
