@@ -1,5 +1,6 @@
 #ifndef __OPS_ARRAY_H__
 #define __OPS_ARRAY_H__
+#include "monty.h"
 
 instruction_t ops[] = {
 	{"push", push},
@@ -10,6 +11,7 @@ instruction_t ops[] = {
 	{"add", add},
 	{"nop", nop},
 	{"sub", sub},
+	{"div", div},
 	{NULL, NULL}
 };
 
