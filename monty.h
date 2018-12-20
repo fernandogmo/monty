@@ -52,6 +52,7 @@ extern state_t global;
 
 /* opcode handlers */
 void exec_line_ops(char *line, size_t line_num);
+void fetch_instruction(char *cmd, size_t line_num);
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
