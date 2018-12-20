@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 	char *num;
 
 	num = strtok(NULL, DELIMS);
-	if (num == NULL || *stack == NULL || line_number == 0)
+	if (num == NULL) /* || *stack == NULL || line_number == 0)*/
 	{
 		printf("L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
