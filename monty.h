@@ -51,18 +51,16 @@ typedef struct instruction_s
 
 /**
  *struct global_state - global variable
- *@top: element at the top node
- *@capacity: current number of nodes
  *@stack: global stack for opcode read-writes
  *@line: line allocated by getline
+ *@file: file opened in main
  *Description: global variable
  */
 typedef struct global_state
 {
-	int     top;      /* data in top node */
-	size_t  capacity; /* current number of nodes */
 	stack_t *stack;   /* global stack for opcode read-writes */
 	char    *line;    /* line allocated by getline */
+	FILE    *file;    /* file opened in main */
 } state_t;
 
 
