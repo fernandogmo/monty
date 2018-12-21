@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *add - add the top 2 elements of the stack
+ *_add - add the top 2 elements of the stack
  *@stack: double pointer that point to the head of stack
  *@line_number: number of line of the file
  */
