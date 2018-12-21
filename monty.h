@@ -60,7 +60,8 @@ typedef struct global_state
 {
 	int     top;      /* data in top node */
 	size_t  capacity; /* current number of nodes */
-	stack_t *stack;    /* global stack for opcode read-writes */
+	stack_t *stack;   /* global stack for opcode read-writes */
+	char    *line;    /* line allocated by getline */
 } state_t;
 
 

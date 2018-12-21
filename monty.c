@@ -1,11 +1,10 @@
 #include "monty.h"
 
-state_t global = {0, 0, NULL};
+state_t global = {0, 0, NULL, NULL};
 
 int main(int argc, char** argv)
 {
 	FILE *file = NULL;
-	char *line = NULL;
 	size_t len = 0, line_num = 0;
 
 	/* Check that exactly one file argument was given */
@@ -24,9 +23,9 @@ int main(int argc, char** argv)
 	}
 	atexit(free_at_exit);
 	/* read every line in file and try executing it */
-	while (getline(&line, &len, file) != -1)
+	while (getline(&global.line, &len, file) != -1)
 		/* execute any valid commands on line */
-		exec_line_ops(line, ++line_num);
+		exec_line_ops(global.line, ++line_num);
 
 	return (EXIT_SUCCESS);
 }
