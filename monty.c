@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
+	atexit(free_at_exit);
 	/* read every line in file and try executing it */
 	while (getline(&line, &len, file) != -1)
 		/* execute any valid commands on line */

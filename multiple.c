@@ -1,14 +1,14 @@
 #include "monty.h"
-
 /**
- *add - add the top 2 elements of the stack
+ *mul - mul the top 2 elements of the stack
  *@stack: double pointer that point to the head of stack
- *@line_number: number of line of the file
+ *@line_number: the numner of line of the file
+ *
  */
-void _add(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
-	int sum;
+	int result;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
@@ -18,8 +18,8 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
-	sum = tmp->n + tmp->next->n;
-	tmp->next->n = sum;
+	result = tmp->next->n * tmp->n;
+	tmp->next->n = result;
 
 	*stack = tmp->next;
 

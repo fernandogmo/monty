@@ -69,12 +69,16 @@ extern state_t global;
 /* opcode handlers */
 void exec_line_ops(char *line, size_t line_num);
 void fetch_instruction(char *cmd, size_t line_num);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
-
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_numner);
+void _div(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void free_at_exit(void);
+void free_stack_t(stack_t *top);
 #endif /*_MONTY_H_*/
