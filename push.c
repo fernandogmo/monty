@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *push - push new node to the end of the stack
+ *_push - push new node to the end of the stack
  *@stack: double pointer to the head of the stack
  *@line_number: number of line in the file
  */
