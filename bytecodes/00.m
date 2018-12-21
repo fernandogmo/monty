@@ -1,5 +1,9 @@
 push 1
+pint
+
 push 2
-push 3
+pint
+push -1
+swap
+pop
 pall
-foo

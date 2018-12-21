@@ -26,6 +26,7 @@ int main(int argc, char** argv)
 	while (getline(&global.line, &len, file) != -1)
 		/* execute any valid commands on line */
 		exec_line_ops(global.line, ++line_num);
+	fclose(file);
 
 	return (EXIT_SUCCESS);
 }
