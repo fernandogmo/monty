@@ -5,7 +5,7 @@
  *@line_number: the numner of line of the file
  *
  */
-void mul(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	int result;

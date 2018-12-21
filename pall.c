@@ -5,7 +5,7 @@
  *@line_number: the number of line of the file
  *
  */
-void pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 

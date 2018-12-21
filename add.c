@@ -5,7 +5,7 @@
  *@stack: double pointer that point to the head of stack
  *@line_number: number of line of the file
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	int sum;

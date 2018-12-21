@@ -24,7 +24,9 @@ void exec_line_ops(char *line, size_t line_num)
  */
 void fetch_instruction(char *cmd, size_t line_num)
 {
-	for (int i = 0; ops[i].opcode; ++i)
+	int i = 0;
+
+	for (; ops[i].opcode; ++i)
 	{
 		if (strcmp(cmd, ops[i].opcode) == 0)
 		{
