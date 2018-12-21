@@ -12,7 +12,7 @@ void exec_line_ops(char *line, size_t line_num)
 	char *cmd = NULL, *arg = NULL;
 
 	cmd = strtok(line, DELIMS);
-	if (cmd)
+	if (cmd && cmd[0] != '#')
 		fetch_instruction(cmd, line_num);
 	(void)arg;
 }
