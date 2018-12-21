@@ -64,8 +64,7 @@ typedef struct global_state
 } state_t;
 
 
-/*extern state_t global; */
-extern stack_t **global
+extern state_t global;
 
 /* opcode handlers */
 void exec_line_ops(char *line, size_t line_num);
