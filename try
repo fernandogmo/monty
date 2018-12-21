@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+./monty ./bytecodes/00.m
+rm monty

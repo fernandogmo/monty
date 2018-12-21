@@ -6,6 +6,15 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stddef.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <ctype.h>
+
+
+#define DELIMS " \n\r\t"
+
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -23,6 +32,7 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -37,4 +47,39 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+
+/**
+ *struct global_state - global variable
+ *@top: element at the top node
+ *@capacity: current number of nodes
+ *@stack: global stack for opcode read-writes
+ *Description: global variable
+ */
+typedef struct global_state
+{
+	int     top;      /* data in top node */
+	size_t  capacity; /* current number of nodes */
+	stack_t *stack;   /* global stack for opcode read-writes */
+	char    *line;    /* line allocated by getline */
+} state_t;
+
+
+extern state_t global;
+
+/* opcode handlers */
+void exec_line_ops(char *line, size_t line_num);
+void fetch_instruction(char *cmd, size_t line_num);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_numner);
+void _div(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void free_at_exit(void);
+void free_stack_t(stack_t *top);
 #endif /*_MONTY_H_*/
