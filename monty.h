@@ -54,6 +54,7 @@ typedef struct instruction_s
  *@top: element at the top node
  *@capacity: current number of nodes
  *@stack: global stack for opcode read-writes
+ *@line: line allocated by getline
  *Description: global variable
  */
 typedef struct global_state

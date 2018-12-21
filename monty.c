@@ -2,7 +2,13 @@
 
 state_t global = {0, 0, NULL, NULL};
 
-int main(int argc, char** argv)
+/**
+ * main - entry point to program
+ * @argc: number of arguments passed to program
+ * @argv: ref to array of arguments passed to program
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ */
+int main(int argc, char **argv)
 {
 	FILE *file = NULL;
 	size_t len = 0, line_num = 0;
@@ -10,7 +16,7 @@ int main(int argc, char** argv)
 	/* Check that exactly one file argument was given */
 	if (argc != 2)
 	{
-		fputs("USAGE: monty file\n",stderr);
+		fputs("USAGE: monty file\n", stderr);
 		exit(EXIT_FAILURE);
 	}
 
