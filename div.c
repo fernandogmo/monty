@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *div - divide the second top element of stack
+ *_div - divide the second top element of stack
  *@stack: double pointer that point to the head of stack
  *@line_number: the number of the line in file
  *

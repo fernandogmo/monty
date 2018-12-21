@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *nop - does not do anything
+ *_nop - does not do anything
  *@stack: double pointer that point to the head of stack
  *@line_number: the number of line in file
  *

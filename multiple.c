@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- *mul - mul the top 2 elements of the stack
+ *_mul - mul the top 2 elements of the stack
  *@stack: double pointer that point to the head of stack
  *@line_number: the numner of line of the file
  *
