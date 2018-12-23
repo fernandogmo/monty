@@ -3,17 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include <string.h>
-#include <stddef.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include <ctype.h>
 
-
 #define DELIMS " \n\r\t"
-
 
 
 /**
@@ -48,7 +41,6 @@ typedef struct instruction_s
 } instruction_t;
 
 
-
 /**
  *struct global_state - global variable
  *@stack: global stack for opcode read-writes
@@ -58,17 +50,19 @@ typedef struct instruction_s
  */
 typedef struct global_state
 {
-	stack_t *stack;   /* global stack for opcode read-writes */
-	char    *line;    /* line allocated by getline */
-	FILE    *file;    /* file opened in main */
+	stack_t   *stack;    /* global stack for opcode read-writes */
+	char       *line;    /* line allocated by getline */
+	FILE       *file;    /* file opened in main */
 } state_t;
-
 
 extern state_t global;
 
-/* opcode handlers */
+
+/* line handlers */
 void exec_line_ops(char *line, size_t line_num);
 void fetch_instruction(char *cmd, size_t line_num);
+
+/* opcode handlers */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
@@ -79,6 +73,9 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_numner);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
+
+/* memory management utils */
 void free_at_exit(void);
 void free_stack_t(stack_t *top);
+
 #endif /*_MONTY_H_*/
